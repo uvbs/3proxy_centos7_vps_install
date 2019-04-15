@@ -2,6 +2,7 @@
 IP=($(dig +short myip.opendns.com @resolver1.opendns.com))
 USERNAME=$(< /dev/urandom tr -dc 'A-Za-z' | head -c4)
 PASS=$(< /dev/urandom tr -dc 'A-Za-z0-9' | head -c4)
+yum -y install gcc automake autoconf libtool make
 wget --no-check-certificate 'https://github.com/z3APA3A/3proxy/archive/0.8.11.tar.gz'
 tar xzf 0.8.11.tar.gz
 cd 3proxy-0.8.11
@@ -20,7 +21,7 @@ wget --no-check-certificate 'https://raw.githubusercontent.com/uvbs/3proxy_cento
 chmod  +x /etc/init.d/3proxyinit
 systemctl stop firewalld 
 systemctl mask firewalld
-yum install psmisc
+yum -y install psmisc
 chkconfig --add 3proxyinit
 chkconfig 3proxyinit on
 service 3proxyinit start
