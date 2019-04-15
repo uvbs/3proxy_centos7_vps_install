@@ -20,6 +20,7 @@ wget --no-check-certificate 'https://raw.githubusercontent.com/uvbs/3proxy_cento
 chmod  +x /etc/init.d/3proxyinit
 systemctl stop firewalld 
 systemctl mask firewalld
+yum install psmisc
 chkconfig --add 3proxyinit
 chkconfig 3proxyinit on
 service 3proxyinit start
