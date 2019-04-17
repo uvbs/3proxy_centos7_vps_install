@@ -28,7 +28,7 @@ service 3proxyinit start
 
 echo "proxy/tcpsocks5"
 echo "server: $IP"
-echo "port: 30002"
+echo "port: 10001"
 echo "username: mi"
 echo "pass: jp"
 echo ""
