@@ -12,9 +12,9 @@ mkdir /etc/3proxy/
 mv 3proxy /etc/3proxy/
 cd /etc/3proxy/
 wget --no-check-certificate 'https://raw.githubusercontent.com/uvbs/3proxy_centos7_vps_install/master/3proxy.cfg'
-chmod 600 /etc/3proxy/3proxy.cfg
-echo "$USERNAME:CL:$PASS" > /etc/3proxy/.proxyauth
-chmod 600 /etc/3proxy/.proxyauth
+chmod 666 /etc/3proxy/3proxy.cfg
+echo "$USERNAME:CL:$PASS" > /etc/3proxy/3pauth.txt
+chmod 666 /etc/3proxy/3pauth.txt
 chmod 777 /etc/3proxy/3proxy
 cd /etc/init.d/
 wget --no-check-certificate 'https://raw.githubusercontent.com/uvbs/3proxy_centos7_vps_install/master/3proxyinit'
@@ -29,6 +29,6 @@ service 3proxyinit start
 echo "proxy/tcpsocks5"
 echo "server: $IP"
 echo "port: 10001"
-echo "username: mi"
-echo "pass: jp"
+echo "username: $USERNAME"
+echo "pass: $PASS"
 echo ""
