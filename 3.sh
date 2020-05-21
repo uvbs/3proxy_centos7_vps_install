@@ -19,8 +19,6 @@ chmod 777 /etc/3proxy/3proxy
 cd /etc/init.d/
 wget --no-check-certificate 'https://raw.githubusercontent.com/uvbs/3proxy_centos7_vps_install/master/3proxyinit'
 chmod  +x /etc/init.d/3proxyinit
-systemctl stop firewalld 
-systemctl mask firewalld
 yum -y install psmisc
 chkconfig --add 3proxyinit
 chkconfig 3proxyinit on
@@ -28,7 +26,7 @@ service 3proxyinit start
 
 echo "proxy/tcpsocks5"
 echo "server: $IP"
-echo "port: 10001"
+echo "port: 20001"
 echo "username: $USERNAME"
 echo "pass: $PASS"
 echo ""
